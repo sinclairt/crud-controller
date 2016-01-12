@@ -29,7 +29,7 @@ Sterling\MagicViews\MagicViewsServiceProvider::class
 
 ### Usage
 
-All you need to do is create a controller and use the ``` Sterling\CrudController\Traits\CrudController ``` trait, ensure the ``` setUp ``` method is called inside your construct and you're good to go! 
+All you need to do is create a controller and use the ``` Sterling\CrudController\Traits\CrudController ``` trait, and ensure the ``` setUp ``` method is called inside your construct and you're good to go!
 
 #### Repositories
 The repository should extend ``` Sterling\CrudController\Repositories\Repository ```, but will at least need to implement ``` Sterling\CrudController\Contracts\Repository ```.
