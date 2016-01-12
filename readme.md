@@ -34,7 +34,7 @@ All you need to do is create a controller and use the ``` Sterling\CrudControlle
 #### Repositories
 The repository should extend ``` Sterling\CrudController\Repositories\Repository ```, but will at least need to implement ``` Sterling\CrudController\Contracts\Repository ```.
 
-All the methods inside the repository use methods from the ``` Illuminate\Database\Eloquent\Model ``` class, so make sure, if you are going to use something other than this in your repository, you implement ``` Sterling\CrudController\Contracts\Repository ``` and implement the methods as necessary.
+All the methods inside the repository use methods from the ``` Illuminate\Database\Eloquent\Model ``` class, so, if you are going to use something other than this in your repository, make sure you implement ``` Sterling\CrudController\Contracts\Repository ``` and implement the methods as necessary.
 
 ### Magic Views
 
