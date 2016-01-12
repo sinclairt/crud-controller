@@ -22,7 +22,7 @@ Add the following repository to your ``` composer.json ```. You will have access
 Add the service provider to your ``` app/config ```
 
 ```sh
-Sterling\MagicViews\MagicViewsServiceProvider::class
+Sterling\CrudController\Providers\CrudControllerServiceProvider::class
 ```
 
 ``` composer dump-autoload ```
