@@ -1,6 +1,6 @@
 # Crud Controller
 
-The Crud Controller is built to minimise the amount of code you need to write to get a resource off the ground. It is coupled with the Magic Views packed which get the views for these methods created in a cinch.
+The Crud Controller is built to minimise the amount of code you need to write to get a resource off the ground. It is coupled with the Magic Views package which gets the views for these methods created in a cinch.
 
 ### Installation
 
@@ -29,12 +29,12 @@ Sterling\MagicViews\MagicViewsServiceProvider::class
 
 ### Usage
 
-All you need to do is create a controller and use the CrudController trait, ensure a the ``` setUp ``` method is called inside your construct and you good to go! 
+All you need to do is create a controller and use the ``` Sterling\CrudController\Traits\CrudController ``` trait, ensure the ``` setUp ``` method is called inside your construct and you're good to go! 
 
 #### Repositories
 The repository should extend ``` Sterling\CrudController\Repositories\Repository ```, but will at least need to implement ``` Sterling\CrudController\Contracts\Repository ```.
 
-All the methods inside the repository use methods from the ``` Illuminate\Database\Eloquent\Model ``` class, so make sure if you are going to use something other than this in your repository you implement ``` Sterling\CrudController\Contracts\Repository ``` and implement ths methods as necessary.
+All the methods inside the repository use methods from the ``` Illuminate\Database\Eloquent\Model ``` class, so make sure, if you are going to use something other than this in your repository, you implement ``` Sterling\CrudController\Contracts\Repository ``` and implement the methods as necessary.
 
 ### Magic Views
 
