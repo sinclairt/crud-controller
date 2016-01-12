@@ -1,0 +1,24 @@
+{
+  "name": "sterling/crud-controller",
+  "description": "Stop repeating yourself in controllers",
+  "type": "library",
+  "require": {
+    "illuminate/view": "^5.1",
+    "illuminate/support": "^5.1",
+    "illuminate/contracts": "^5.1",
+    "sterling/magic-views": "1.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "Sterling\\CrudController": "src/"
+    }
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tom Sinclair",
+      "email": "tsinclair@sterlingsolutions.co.uk"
+    }
+  ],
+  "minimum-stability": "dev"
+}
