@@ -7,7 +7,8 @@
     "illuminate/support": "^5.1",
     "illuminate/contracts": "^5.1",
     "sterling/magic-views": "1.*",
-    "sterling/responses": "1.*"
+    "sterling/responses": "1.*",
+    "sterling/repository": "1.*"
   },
   "autoload": {
     "psr-0": {

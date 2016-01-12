@@ -2,7 +2,7 @@
 
 namespace Sterling\CrudController\Traits;
 
-use Sterling\CrudController\Contracts\Repository;
+use Sterling\Repository\Contracts\Repository;
 use Sterling\MagicViews\HasMagicViews;
 use Illuminate\Database\Eloquent\Model;
 use Sterling\Responses\ControllerResponses;

@@ -32,9 +32,9 @@ Sterling\CrudController\Providers\CrudControllerServiceProvider::class
 All you need to do is create a controller and use the ``` Sterling\CrudController\Traits\CrudController ``` trait, and ensure the ``` setUp ``` method is called inside your construct and you're good to go!
 
 #### Repositories
-The repository should extend ``` Sterling\CrudController\Repositories\Repository ```, but will at least need to implement ``` Sterling\CrudController\Contracts\Repository ```.
+The repository should extend ``` Sterling\Repository\Repositories\Repository ```, but will at least need to implement ``` Sterling\Repository\Contracts\Repository ```.
 
-All the methods inside the repository use methods from the ``` Illuminate\Database\Eloquent\Model ``` class, so, if you are going to use something other than this in your repository, make sure you implement ``` Sterling\CrudController\Contracts\Repository ``` and implement the methods as necessary.
+All the methods inside the repository use methods from the ``` Illuminate\Database\Eloquent\Model ``` class, so, if you are going to use something other than this in your repository, make sure you implement ``` Sterling\Repository\Contracts\Repository ``` and implement the methods as necessary.
 
 ### Magic Views
 
