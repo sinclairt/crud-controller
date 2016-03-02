@@ -1,11 +1,11 @@
 <?php
 
-namespace Sterling\CrudController\Traits;
+namespace Sinclair\CrudController\Traits;
 
-use Sterling\Repository\Contracts\Repository;
-use Sterling\MagicViews\HasMagicViews;
+use Sinclair\Repository\Contracts\Repository;
+use Sinclair\MagicViews\HasMagicViews;
 use Illuminate\Database\Eloquent\Model;
-use Sterling\Responses\ControllerResponses;
+use Sinclair\Responses\ControllerResponses;
 
 trait CrudController
 {

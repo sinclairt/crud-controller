@@ -1,4 +1,6 @@
-<?php namespace Sterling\CrudController\Traits;
+<?php
+
+namespace Sinclair\CrudController\Traits;
 
 trait Destroyable
 {

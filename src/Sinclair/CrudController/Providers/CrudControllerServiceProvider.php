@@ -1,10 +1,10 @@
 <?php
 
-namespace Sterling\CrudController\Providers;
+namespace Sinclair\CrudController\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Sterling\MagicViews\MagicViewsServiceProvider;
-use Sterling\Responses\SterlingResponseServiceProvider;
+use Sinclair\MagicViews\MagicViewsServiceProvider;
+use Sinclair\Responses\SinclairResponseServiceProvider;
 
 class CrudControllerServiceProvider extends ServiceProvider
 {
@@ -34,7 +34,7 @@ class CrudControllerServiceProvider extends ServiceProvider
     {
         $this->app->register(MagicViewsServiceProvider::class);
 
-        $this->app->register(SterlingResponseServiceProvider::class);
+        $this->app->register(SinclairResponseServiceProvider::class);
     }
 
     /**

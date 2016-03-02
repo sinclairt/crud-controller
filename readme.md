@@ -4,37 +4,37 @@ The Crud Controller is built to minimise the amount of code you need to write to
 
 ### Installation
 
-Add the following repository to your ``` composer.json ```. You will have access as long as you belong to the Sterling team on Bitbucket.
+Add the following repository to your ``` composer.json ```.
 
 ``` sh
   "repositories": [
     {
       "type": "composer",
-      "url": "http://satis.sterling-design.co.uk"
+      "url": "http://satis.sinclair-design.co.uk"
     }
   ]
 ```
 
-``` composer require sterling/crud-controller```
+``` composer require sinclair/crud-controller```
 
 ``` composer install ```
 
 Add the service provider to your ``` app/config ```
 
 ```sh
-Sterling\CrudController\Providers\CrudControllerServiceProvider::class
+Sinclair\CrudController\Providers\CrudControllerServiceProvider::class
 ```
 
 ``` composer dump-autoload ```
 
 ### Usage
 
-All you need to do is create a controller and use the ``` Sterling\CrudController\Traits\CrudController ``` trait, and ensure the ``` setUp ``` method is called inside your construct and you're good to go!
+All you need to do is create a controller and use the ``` Sinclair\CrudController\Traits\CrudController ``` trait, and ensure the ``` setUp ``` method is called inside your construct and you're good to go!
 
 #### Repositories
-The repository should extend ``` Sterling\Repository\Repositories\Repository ```, but will at least need to implement ``` Sterling\Repository\Contracts\Repository ```.
+The repository should extend ``` Sinclair\Repository\Repositories\Repository ```, but will at least need to implement ``` Sinclair\Repository\Contracts\Repository ```.
 
-All the methods inside the repository use methods from the ``` Illuminate\Database\Eloquent\Model ``` class, so, if you are going to use something other than this in your repository, make sure you implement ``` Sterling\Repository\Contracts\Repository ``` and implement the methods as necessary.
+All the methods inside the repository use methods from the ``` Illuminate\Database\Eloquent\Model ``` class, so, if you are going to use something other than this in your repository, make sure you implement ``` Sinclair\Repository\Contracts\Repository ``` and implement the methods as necessary.
 
 ### Magic Views
 
