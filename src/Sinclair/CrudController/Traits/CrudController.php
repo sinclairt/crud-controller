@@ -29,7 +29,7 @@ trait CrudController
     /**
      * @param Repository $repository
      */
-    public function setUp(Repository $repository)
+    public function setUp( Repository $repository )
     {
         // this will set the class name automatically, even for a child of this class
         // as long as this constructor is called using parent::__construct();
@@ -65,9 +65,9 @@ trait CrudController
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(\Request $request)
+    public function store( \Request $request )
     {
-        return $this->doStore($request);
+        return $this->doStore($request, null, null, $this->guessMessage('created'));
     }
 
     /**
@@ -78,7 +78,7 @@ trait CrudController
      *
      * @return \Illuminate\Http\Response
      */
-    public function show($model)
+    public function show( $model )
     {
         return $this->showView(get_defined_vars());
     }
@@ -90,7 +90,7 @@ trait CrudController
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit($model)
+    public function edit( $model )
     {
         return $this->editView(get_defined_vars());
     }
@@ -101,9 +101,9 @@ trait CrudController
      *
      * @return mixed
      */
-    public function update(\Request $request, $model)
+    public function update( \Request $request, $model )
     {
-        return $this->doUpdate($request, $model);
+        return $this->doUpdate($request, $model, null, null, $this->guessMessage('updated'));
     }
 
     /**
@@ -113,22 +113,36 @@ trait CrudController
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function restore($model)
+    public function restore( $model )
     {
-        return $this->crudResponse($this->repository->restore($model));
+        return $this->crudResponse($this->repository->restore($model), null, null, $this->guessMessage('restored'));
     }
-
 
     /**
      * @param $classPath
      *
      * @return mixed
      */
-    protected function getClassName($classPath)
+    protected function getClassName( $classPath )
     {
-        return snake_case(str_replace('Controller','',class_basename($classPath)));
+        return snake_case(str_replace('Controller', '', class_basename($classPath)));
     }
 
+    /**
+     * @return mixed
+     */
+    protected function getResourceNameProperCase()
+    {
+        return ucwords(str_replace('_', ' ', $this->class));
+    }
 
-
+    /**
+     * @param $verb
+     *
+     * @return string
+     */
+    protected function guessMessage( $verb )
+    {
+        return trans('crud-controller::resources.' . $this->class, $this->getResourceNameProperCase()) . ' ' . $verb . '!';
+    }
 }

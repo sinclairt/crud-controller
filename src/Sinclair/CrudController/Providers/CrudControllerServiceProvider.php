@@ -22,7 +22,11 @@ class CrudControllerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->loadTranslationsFrom(__DIR__ . '/../../lang', 'crud-controller');
 
+        $this->publishes([
+            __DIR__ . '/../../../lang' => base_path('resources/lang/vendor/curd-controller')
+        ]);
     }
 
     /**
