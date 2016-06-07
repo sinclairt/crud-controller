@@ -57,7 +57,10 @@ trait CrudController
      */
     public function create()
     {
-        return $this->createView();
+        if ( method_exists($this, 'formData') )
+            extract($this->formData());
+
+        return $this->createView(get_defined_vars());
     }
 
     /**
@@ -92,6 +95,9 @@ trait CrudController
      */
     public function edit( $model )
     {
+        if ( method_exists($this, 'formData') )
+            extract($this->formData());
+        
         return $this->editView(get_defined_vars());
     }
 
