@@ -7,6 +7,10 @@ use Sinclair\MagicViews\HasMagicViews;
 use Illuminate\Database\Eloquent\Model;
 use Sinclair\Responses\ControllerResponses;
 
+/**
+ * Class CrudController
+ * @package Sinclair\CrudController\Traits
+ */
 trait CrudController
 {
     use ControllerResponses, Destroyable, HasMagicViews;
@@ -97,7 +101,7 @@ trait CrudController
     {
         if ( method_exists($this, 'formData') )
             extract($this->formData());
-        
+
         return $this->editView(get_defined_vars());
     }
 
@@ -150,5 +154,35 @@ trait CrudController
     protected function guessMessage( $verb )
     {
         return trans('crud-controller::resources.' . $this->class, $this->getResourceNameProperCase()) . ' ' . $verb . '!';
+    }
+
+    /**
+     * @return null
+     */
+    public function getPrefix()
+    {
+        return $this->prefix;
+    }
+
+    /**
+     * @param null $prefix
+     *
+     * @return $this
+     */
+    public function setPrefix( $prefix )
+    {
+        $this->prefix = $prefix;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resource
+     *
+     * @return string
+     */
+    public function route( $resource = 'index' )
+    {
+        return implode('.', array_filter([ $this->getPrefix(), $this->class, $resource ]));
     }
 }
