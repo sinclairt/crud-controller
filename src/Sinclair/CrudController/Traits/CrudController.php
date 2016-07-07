@@ -74,7 +74,7 @@ trait CrudController
      */
     public function store( \Request $request )
     {
-        return $this->doStore($request, null, null, $this->guessMessage('created'));
+        return $this->doStore($request, null, null, $this->guessMessage());
     }
 
     /**
@@ -113,7 +113,7 @@ trait CrudController
      */
     public function update( \Request $request, $model )
     {
-        return $this->doUpdate($request, $model, null, null, $this->guessMessage('updated'));
+        return $this->doUpdate($request, $model, null, null, $this->guessMessage());
     }
 
     /**
@@ -125,7 +125,7 @@ trait CrudController
      */
     public function restore( $model )
     {
-        return $this->crudResponse($this->repository->restore($model), null, null, $this->guessMessage('restored'));
+        return $this->crudResponse($this->repository->restore($model), null, null, $this->guessMessage());
     }
 
     /**

@@ -22,7 +22,7 @@ trait Destroyable
             $success = false;
         }
 
-        return $this->crudResponse($success, null, null, $this->guessMessage('deleted'));
+        return $this->crudResponse($success, null, null, $this->guessMessage());
     }
 
 }
