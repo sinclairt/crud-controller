@@ -151,9 +151,13 @@ trait CrudController
      *
      * @return string
      */
-    protected function guessMessage( $verb )
+    protected function guessMessage( $verb = null )
     {
-        if($class = trans('crud-controller::resources.' . $this->class) == 'crud-controller::resources.' . $this->class)
+        $verb = is_null($verb) ? array_get(debug_backtrace(), '1.function') : $verb;
+
+        $verb .= ends_with($verb, 'e') ? 'd' : 'ed';
+
+        if ( $class = trans('crud-controller::resources.' . $this->class) == 'crud-controller::resources.' . $this->class )
             $class = $this->getResourceNameProperCase();
 
         return $class . ' ' . $verb . '!';
