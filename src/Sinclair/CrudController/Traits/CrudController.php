@@ -153,7 +153,10 @@ trait CrudController
      */
     protected function guessMessage( $verb )
     {
-        return trans('crud-controller::resources.' . $this->class, $this->getResourceNameProperCase()) . ' ' . $verb . '!';
+        if($class = trans('crud-controller::resources.' . $this->class) == 'crud-controller::resources.' . $this->class)
+            $class = $this->getResourceNameProperCase();
+
+        return $class . ' ' . $verb . '!';
     }
 
     /**
