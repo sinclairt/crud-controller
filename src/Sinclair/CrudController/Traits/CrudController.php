@@ -2,6 +2,7 @@
 
 namespace Sinclair\CrudController\Traits;
 
+use Illuminate\Http\Request;
 use Sinclair\Repository\Contracts\Repository;
 use Sinclair\MagicViews\HasMagicViews;
 use Illuminate\Database\Eloquent\Model;
@@ -100,7 +101,7 @@ trait CrudController
     public function edit( $model )
     {
         if ( method_exists($this, 'formData') )
-            extract($this->formData());
+            extract($this->formData($model));
 
         return $this->editView(get_defined_vars());
     }
