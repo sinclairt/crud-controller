@@ -46,11 +46,15 @@ trait CrudController
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
+     *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index( Request $request )
     {
-        $rows = $this->repository->getAllPaginate();
+        $rows = $this->repository->filterPaginated($request);
+
+        $new = true;
 
         return $this->indexView(get_defined_vars());
     }
@@ -69,11 +73,11 @@ trait CrudController
     }
 
     /**
-     * @param \Request $request
+     * @param Request $request
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store( \Request $request )
+    public function store( Request $request )
     {
         return $this->doStore($request, null, null, $this->guessMessage());
     }
@@ -107,12 +111,12 @@ trait CrudController
     }
 
     /**
-     * @param \Request $request
+     * @param Request $request
      * @param Model $model
      *
      * @return mixed
      */
-    public function update( \Request $request, $model )
+    public function update( Request $request, $model )
     {
         return $this->doUpdate($request, $model, null, null, $this->guessMessage());
     }
