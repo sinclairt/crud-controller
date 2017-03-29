@@ -4,18 +4,7 @@ The Crud Controller is built to minimise the amount of code you need to write to
 
 ### Installation
 
-Add the following repository to your ``` composer.json ```.
-
-``` sh
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "http://satis.sinclair-design.co.uk"
-    }
-  ]
-```
-
-``` composer require sinclair/crud-controller```
+``` composer require sinclairt/crud-controller```
 
 ``` composer install ```
 
